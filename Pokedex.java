@@ -18,6 +18,8 @@ public class Pokedex {
                 System.out.println("\nPokémon encontrado:");
                 System.out.println("\n" + lista[numconsul - 1]);
                 System.out.println(lista2[numconsul - 1]);
+            } else if (numconsul == 0) {
+                System.out.println("Voltando...");
             } else {
                 System.out.println("Posição inválida!");
             }
@@ -250,7 +252,7 @@ public class Pokedex {
         System.out.println("7º) \"Ele é muito protetor de seu território, sempre irá atacar brutalmente qualquer intruso. Possui uma ótima visão, mesmo voando bem alto " +
                 "\nirá localizar sua presa. Suas garras afiadas e bastante desenvolvidas são a sua arma de ataque. Ele pode carregar presas como um Exeggcute " +
                 "\npara seu ninho a mais de 100 km de distância.\" Essa descrição se encaixa em que pokémon?");
-        System.out.println("\n1. Fearow\n2. Spearow\n3. Pigeot\n4. Pidgotto");
+        System.out.println("\n1. Fearow\n2. Spearow\n3. Pidgey\n4. Pidgotto");
         resposta = resposta_certa();
         if (resposta == 4) {
             System.out.println("\nCerto!\n");
@@ -270,7 +272,7 @@ public class Pokedex {
         }
 
         System.out.println("9º) Qual o nome da ave lendária do tipo Fogo?");
-        System.out.println("\n1. Articuno\n2. Zapdos\n3. Moltres\n");
+        System.out.println("\n1. Articuno\n2. Zapdos\n3. Moltres\n4. Lugia");
         resposta = resposta_certa();
         if (resposta == 3) {
             System.out.println("\nCerto!\n");
@@ -281,7 +283,7 @@ public class Pokedex {
 
         do {
             System.out.println("10º) Escolha o Inicial de Kanto:");
-            System.out.println("\n1. Bulbasaur\n2. Charmander\n3. Squirtle\n");
+            System.out.println("\n1. Bulbasaur\n2. Charmander\n3. Squirtle\n4. Pikachu");
             resposta = resposta_certa();
             if (resposta == 2) {
                 System.out.println("\nCerto!\n");
@@ -291,7 +293,8 @@ public class Pokedex {
             }
         }while (resposta != 2);
 
-        String terno = (acerto >=1 && acerto <= 4) ? + acerto + " Insígnias, Você é apenas um Fracassado!" :
+        String terno = (acerto == 0) ? + acerto + " Insígnias, você é um completo Fracassado!" :
+                (acerto >=1 && acerto <= 4) ? + acerto + " Insígnias, Você é apenas um Fracassado!" :
                         (acerto == 5) ? + acerto + " Insígnias, você é Esforçado!" :
                                 (acerto >= 6 && acerto <= 8) ? + acerto + " Insignias, Você é um treinador pokémon!" :
                                         (acerto >= 9 && acerto <= 10) ? + acerto + " Insígnias, você é um Mestre Pokémon!" : "Erro!";
